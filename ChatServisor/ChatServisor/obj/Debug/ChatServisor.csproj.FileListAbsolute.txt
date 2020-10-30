@@ -1,0 +1,6 @@
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\bin\Debug\ChatServisor.exe
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\bin\Debug\ChatServisor.pdb
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\obj\Debug\ChatServisor.csprojAssemblyReference.cache
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\obj\Debug\ChatServisor.csproj.CoreCompileInputs.cache
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\obj\Debug\ChatServisor.exe
+C:\Users\Gabriela\source\repos\ChatServisor\ChatServisor\obj\Debug\ChatServisor.pdb
