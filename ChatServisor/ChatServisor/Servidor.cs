@@ -20,7 +20,7 @@ namespace ChatServisor
         private IPEndPoint IPConexion = new IPEndPoint(IPAddress.Any, 8000); //Almacenara la direccion IP y nuestro puerto a traves del cual existirá la comunicacion
         private List<Connection> list = new List<Connection>(); //Lista de la Estructura conexion que almacenara los datos para el chat
 
-        Connection con;
+        Connection con; //variable de conexion 
 
         private struct Connection
         {
@@ -61,8 +61,6 @@ namespace ChatServisor
                 Thread Sesiones = new Thread(Escuchar_Conexiones);
                 Sesiones.Start(); 
             }
-
-            
         }
 
         public void Escuchar_Conexiones()
@@ -77,7 +75,7 @@ namespace ChatServisor
                 try  //ell uso de try atrapara posibles excepciones en caso de que ocurra un error atrapandolo en el catch
                 {
                     string Mensajes = hcon.DatosLeidos.ReadLine(); //Leer los datos mandados por el cliente 
-                    Console.WriteLine(hcon.NomUsua + ":" + Mensajes); //En la consola mostramos el usario conectado y la informacion que mando 
+                    Console.WriteLine(hcon.NomUsua + " : " + Mensajes); //En la consola mostramos el usario conectado y la informacion que mando 
 
                     //Est bucle recorrera todas la conexiones que existan y permitira mostrar los mensajes nuevos que se vayan madando
                     //a traves de la verificacion de la lista que tiene de todas las conexiones que se han ido creando. 
@@ -85,8 +83,8 @@ namespace ChatServisor
                     {
                         try
                         {
-                            c.DatosEscritos.WriteLine(hcon.NomUsua + ":" + Mensajes); //se agregaran a la lista los mensajes que escriba el cliente con todo y su nombre de usuario
-                            c.DatosEscritos.Flush(); //despues en el textboxt donde se escribiran los mensajes se limpiaran luego de que se envien. 
+                            c.DatosEscritos.WriteLine(hcon.NomUsua + " : " + Mensajes); //se agregaran a la lista los mensajes que escriba el cliente con todo y su nombre de usuario
+                            c.DatosEscritos.Flush(); //despues en el textboxt donde se escribiran los mensajes esta infromacion será enviada a traves de la red. 
                         }
                         catch
                         {
@@ -100,7 +98,7 @@ namespace ChatServisor
                 catch
                 {
                     list.Remove(hcon);
-                    Console.WriteLine(hcon.NomUsua + "se ha desconectado");
+                    Console.WriteLine(hcon.NomUsua + " se ha desconectado");
                     break;
                 }
 
